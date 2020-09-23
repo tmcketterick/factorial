@@ -8,6 +8,7 @@ on:
     branches: [ dev ]
     paths: 
     - 'factorial.py' 
+    - 'lint.py' 
 jobs:
   build:
 
