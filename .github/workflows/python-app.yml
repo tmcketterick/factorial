@@ -9,7 +9,7 @@ on:
     paths: 
     - 'factorial.py' 
     - 'lint.py' 
-    - 'ptest_test.py' 
+    - 'pytest_test.py' 
 jobs:
   build:
 
