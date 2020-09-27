@@ -22,4 +22,9 @@ def sum_factorial():
     result = sum(final_list)
 
     print("Final SUM = {}".format(result))
+    
+    return result
 
+if __name__ == "__main__": 
+
+    sum_factorial()  
