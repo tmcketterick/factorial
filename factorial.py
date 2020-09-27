@@ -23,6 +23,3 @@ def sum_factorial():
 
     print("Final SUM is {}".format(result))
 
-
-if __name__ == "__main__":
-    sum_factorial()
