@@ -1,4 +1,4 @@
-from factorial import *
+import factorial
 
 class TestClass:
     def test_1(self):
@@ -8,7 +8,7 @@ class TestClass:
         assert factorial(1) == 1
 
     def test_3(self):
-        assert sum_factorial() == 620960027832821612639424806694551108812720525606160920420940314
+        assert factorial.sum_factorial() == 620960027832821612639424806694551108812720525606160920420940314
         assert len(final_list) == 50
         
  
