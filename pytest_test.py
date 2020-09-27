@@ -1,4 +1,4 @@
-from factorial import factorial sum_factorial
+from factorial import factorial, sum_factorial
 
 class TestClass:
     def test_1(self):
