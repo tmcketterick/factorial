@@ -32,3 +32,22 @@ jobs:
       run: |
         pytest pytest_test.py
   
+  deploy:
+    needs: build
+    name: Upload to Amazon S3
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Configure AWS credentials 
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.TEST_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.TEST_AWS_SECRET_ACCESS_KEY }}
+
+    - name: Copy files to my S3 bucket
+      run: |
+        aws s3 cp factorial.py s3://factorial-taupirho
+        aws s3 ls s3://factorial-taupirho
