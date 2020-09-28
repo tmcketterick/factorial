@@ -47,7 +47,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - name: Copy all files to our S3 bucket with the AWS CLI
+    - name: Copy our python module to our S3 bucket with the AWS CLI
       run: |
         aws s3 cp factorial.py s3://factorial-taupirho
         aws s3 ls s3://factorial-taupirho
