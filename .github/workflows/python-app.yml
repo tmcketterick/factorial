@@ -49,5 +49,5 @@ jobs:
 
     - name: Copy all files to our S3 bucket with the AWS CLI
       run: |
-        aws s3 sync . s3://factorial-taupirho
+        aws s3 cp factorial.py s3://factorial-taupirho
         aws s3 ls s3://factorial-taupirho
