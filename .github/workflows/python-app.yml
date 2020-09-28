@@ -32,6 +32,7 @@ jobs:
         pytest pytest_test.py
   
   deploy:
+    needs: build
     name: Upload to Amazon S3
     runs-on: ubuntu-latest
 
@@ -39,13 +40,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Configure AWS credentials from Test account
+    - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - name: Copy files to the test website with the AWS CLI
+    - name: Copy all files to our S3 bucket with the AWS CLI
       run: |
         aws s3 sync . s3://factorial-taupirho
+        aws s3 ls s3://factorial-taupirho
