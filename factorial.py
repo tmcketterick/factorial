@@ -14,7 +14,7 @@ def factorial(n):
     return factorial
 
 def sum_factorial():
-
+    """New docstring"""
     for i in range(50):
 
         final_list.append(factorial(i))
