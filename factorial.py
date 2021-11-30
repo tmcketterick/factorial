@@ -3,7 +3,7 @@ import time
 final_list = []
 
 def factorial(n):
-
+    "Docstring for factorial"
     time.sleep(.1)
 
     factorial = 1
